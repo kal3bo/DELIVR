@@ -44,7 +44,7 @@ Once the delivery is finished, the operator has to confirm it. If he/she does th
 
 After confirmation the operator will return to the main office to recharge the drone and wait for the next job.
 
-### Task
+### Tasks
 
 - Import and optimize the 3D models.
 
@@ -56,156 +56,109 @@ After confirmation the operator will return to the main office to recharge the d
 
 	- Optimize any high-poly mesh. Content Prep
 
-2. Create a street block.
+- Create interior office
 
-a. Create a new level. style
+	- Build interior design.
+	
+	- Add static mesh models.
+	
+	- Add pick up BPs.
+	
+	- Lights.
 
-b. Add static mesh models to the level to recreate a street block. style
+- Create a street block.
 
-c. Add lighting for the street. style
+	- Create level style
 
-3. Creating the contact site between the drone and the delivery.
+	- Add static mesh models to the level to recreate a street block. style
 
-a. Add collision to the drone for overlap events
+	- Add lighting for the street. style
+	
+- Create drone.
+	
+	- Add drone mesh to VR Pawn BP.
 
-b. Add a delivery pawn (receiver) to hand over the package. style
+	- Add collision to the drone.
+	
+	
+- Creating the contact site between the drone and the delivery.
 
-c. Import animation BP or overlap event to detect drone is approaching. Content Prep
+	- Add collision to the drone for overlap events
 
-d. Drone communicate with the delivery pawn through level BP, Dispatch, or state machine for the delivery animation BP.
+	- Drone communicate with the delivery pawn through level BP, Dispatch, or state machine for the delivery animation BP.
 
-4. Program the HUD for the pilot of the drone.
 
-a. Study IFR references.
+- Program the HUD for the pilot of the drone.
 
-b. Calculate speed in BP. Function
+	- Get score from GameMode or GameScore. 
 
-c. Get score from GameMode or GameScore. Function
+	- Count down for the delivery time.
 
-d. Count down for the delivery time. Function
+	- Track the altitude and latitude (Yaw offset). Use a holo-drone to visually track drone orientation.
 
-e. Track the altitude and latitude (Yaw offset). Use a holo-drone to visually track drone orientation. Function
+	- Add minimap widget.
+	
+	- Add current time 
 
-f. Add a google-map like cutout for navigation. Style
+	- Develop BP for the mini map. 
 
-i. Develop BP for the mini map. Function
+	- Add battery life graphic to the HUD. Content Prep
 
-g. Add emergency button input. Content Prep
+	- Battery life.
 
-i. Develop BP for emergency button. Function
+	- Add package info to the HUD. 
 
-h. Add battery life graphic to the HUD. Content Prep
+- Drone Interaction
 
-i. Developer BP for battery life. Function
+	- Add pickup and drop-off input.
+	
+	- Develop BP for auto pickup and drop-off events. 
 
-i. Add package info to the HUD. Content Prep
+	- Add motion controller inputs to the vr pawn. All the drone controls are on the sticks.
 
-i. Quantities, labels, weight, defects, etc.
+	- Add rotation and movement for the controllers
 
-ii. Develop BP to display package info for HUD Function
+	- Add haptics for collision
 
-j. Add signal strength graphic to the HUD. Content Prep
+	- Thumbstick for direction control.
 
-i. Develop BP for low or high signal strength. Function
+	- Add grip to drop or pickup event.
 
-k. Add an auto-pilot input. Content Prep
+- Score Management
 
-i. Develop BP for the auto-pilot event. Function
+	- Make an Enum list of tasks to complete.
 
-l. Add pickup and drop-off input. Content Prep
+	- Print the enum list for the player.
 
-i. Develop BP for auto pickup and drop-off events. Function
+	- Add switch by Enum to go to next task.
 
-m. Add a re-calibrate input. Content Prep
+	- Add a TimeNode to track time per task.
 
-i. Develop BP to auto-readjust the drone level Function
+	- Add widget to print scores. style
 
-n. Add start and stop input. Content Prep
+- Sound.
 
-i. Develop BP for turn-on and off events. Function
+	- Flying FX.
+	
+	- Pick Up FX.
+	
+	- Drop Off FX.
+	
+	- Environment Sound.
+	
+		- Cars.
+		
+		- People.
+		
+		- Animals.
 
-5. Add motion controller inputs to the vr pawn. All the drone controls are on the sticks Function
+- Client experience.
 
-a. Add rotation and movement for the controllers
+	- Create VR Pawn.
+	
+	- Create Nav Mesh.
+	
+	- Create target point.
+	
+	- Pick up interaction.
 
-b. Add haptics for collision
-
-c. Add switch mode from ground to drone
-
-d. Print tasks from enum
-
-e. Add auto pilot event
-
-f. Add right trigger for speed.
-
-g. Add left trigger for slow to stop.
-
-h. Add left thumbstick for direction control
-
-i. Add right thumbstick for YAW rotation
-
-j. Add grip to drop or pickup event
-
-k. Add X for emergency stop to zero the speed or hovers to closest safehouse.
-
-6. Add sensors to the drone Function
-
-a. Radial trace or spherical trace.
-
-7. Add feedback system: Function
-
-a. Make an Enum list of tasks to complete.
-
-b. Print the enum list for the player.
-
-c. Add switch by Enum to go to next task.
-
-d. Add a TimeNode to track time per task.
-
-e. Add a help assist for when TimeNode finishes
-
-8. Add thirdperson pack for UE. Content Prep
-
-9. Add mannequin to the level. style
-
-a. Add collision to detect drone approaching Function
-
-b. Import animation for reacting to the drone approach Content Prep
-
-c. Add task complete event to the mannequin actor. Function
-
-10. Add a capture cam to the drone HUD for monitoring the delivery basket. style
-
-11. Add different weather to the Game Mode. style
-
-a. Add sunlight control to level BP. Function
-
-b. Add city control to the level Bp. Function
-
-12. Add save to game state for manager to review. Function
-
-a. Add new level for managers. style
-
-b. Add widget to print scores. style
-
-c. Add game scores to the new level. Function
-
-d. Add sound. style
-
-e. Add widget interact to use oculus touch as a laser pointer Function
-
-13. Add receiver experience
-
-a. Bind the delivery pawn with drone dispatches. Function
-
-b. Add input to switch from drone to the receiver. Content Prep
-
-14. Create actor for the delivery package. Content Prep
-
-a. Add grabbale interface Function
-
-b. Add pickup and drop events Function
-
-15. End the game when the player (the consumer) picks up the package.
-
-a. Level BP fades camera to black. style
