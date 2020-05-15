@@ -36,4 +36,11 @@ The drone is activated and the interface instructs the operator on how to take o
 
 Once the process aboved explained is complete, a mini map will be added in the interface to guide the operator to the pick up destination. The current time as well as the delivery time will be added to the interface for the operator to calculate the flight time.
 
+One package can be delivered at once. The user is free to navigate wherever he/she wants but the fastest he/she gets to the delivery destination the better the score, which they can’t see until the simulation is over.  
+
+When the operator gets close enough to the drop off location, the level changes so he can control the client that is waiting for the package for him to understand completely the process of delivery. The client should receive a notification saying the delivery is close and needs to approach to a pick up location without being so close, or the drone won’t drop the delivery.
+
+Once the delivery is finished, the operator has to confirm it. If he/she does the confirmation before the client pick ups the package, the score will drop.
+
+After confirmation the operator will return to the main office to recharge the drone and wait for the next job.
 
